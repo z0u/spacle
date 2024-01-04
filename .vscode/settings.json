@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "[javascript]": {
+    "editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?"
+  },
+  "[typescript]": {
+    "editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?"
+  }
+}

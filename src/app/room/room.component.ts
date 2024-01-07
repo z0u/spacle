@@ -1,18 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit, Optional } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, Optional } from '@angular/core';
 import Peer from 'peerjs';
-import { PeerService } from '../peer.service';
+import { PeerService } from '../peer/peer.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-room',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.sass',
+  templateUrl: './room.component.html',
+  styleUrl: './room.component.sass',
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class RoomComponent implements OnInit, OnDestroy {  
   constructor(@Optional() readonly peerService?: PeerService) {}
   me: Peer | null = null;
+  roomId?: string;
+
+  @Input()
+  set id(roomId: string) {
+    this.roomId = roomId;
+  }
 
   ngOnInit() {
     this.me = this.peerService?.createPeer() ?? null;

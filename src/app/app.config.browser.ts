@@ -1,6 +1,6 @@
 import { ApplicationConfig, mergeApplicationConfig } from '@angular/core';
 import { appConfig } from './app.config';
-import { PeerServiceBrowserProvider } from './peer.service.browser';
+import { PeerServiceBrowserProvider } from './peer/peer.service.browser';
 
 const browserConfig: ApplicationConfig = {
   providers: [PeerServiceBrowserProvider],

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, Optional } from '@angular/core';
 import Peer from 'peerjs';
-import { v4 as uuid } from 'uuid';
 import { PeerService } from '../peer.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   me: Peer | null = null;
 
   ngOnInit() {
-    this.me = this.peerService?.createPeer(uuid()) ?? null;
+    this.me = this.peerService?.createPeer() ?? null;
   }
 
   ngOnDestroy() {

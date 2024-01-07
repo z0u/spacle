@@ -3,5 +3,5 @@ import { Peer } from 'peerjs';
 
 @Injectable()
 export abstract class PeerService {
-  abstract createPeer(id: string): Peer | null;
+  abstract createPeer(): Peer;
 }
